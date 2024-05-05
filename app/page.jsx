@@ -1,17 +1,12 @@
-import "@styles/globals.css";
+import Feed from "@components/Feed";
 import Navbar from "@components/Navbar";
 
-export const metadata = {
-  title: "Artify",
-  description: "Discover and Share Art",
-};
-
-const Home = ({children }) => {
+const Home = () => {
   return (
-      <>
-        <Navbar />
-        {/* {children} */}
-      </>
+    <>
+      <Navbar />
+      <Feed />
+    </>
   );
 };
 
