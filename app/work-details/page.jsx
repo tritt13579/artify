@@ -12,7 +12,7 @@ import {
   ArrowBackIosNew,
   ShoppingCart,
   Favorite,
-} from "@mui/icons-material"; 
+} from "@mui/icons-material";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
@@ -138,7 +138,6 @@ const WorkDetails = () => {
   };
 
   console.log(session?.user?.cart);
-
   return loading ? (
     <Loader />
   ) : (
