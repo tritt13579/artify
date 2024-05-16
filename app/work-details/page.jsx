@@ -31,6 +31,7 @@ const WorkDetails = () => {
       });
       const data = await response.json();
       setWork(data);
+
       setLoading(false);
     };
 
@@ -137,7 +138,7 @@ const WorkDetails = () => {
     }
   };
 
-  console.log(session?.user?.cart);
+  // console.log(session?.user?.cart);
   return loading ? (
     <Loader />
   ) : (
@@ -167,7 +168,6 @@ const WorkDetails = () => {
             </div>
           )}
         </div>
-
         <div className="slider-container">
           <div
             className="slider"

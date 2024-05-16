@@ -1,8 +1,8 @@
 import "@styles/globals.css";
 import Provider from "@components/Provider";
 export const metadata = {
-  title: "Artify",
-  description: "Discover and Share Art",
+  title: "HandiMart",
+  description: "Where Handcrafted Dreams Come True",
 };
 const layout = ({ children }) => {
   return (

@@ -30,17 +30,20 @@ export async function POST(req) {
       // Convert it to a Buffer
       const buffer = Buffer.from(bytes);
 
+      // Generate a unique filename by appending a timestamp
+      const filename = `${Date.now()}-${photo.name}`;
+
       // Define the destination path for the uploaded file
       const workImagePath = path.resolve(
         process.cwd(),
         "public/uploads",
-        photo.name
+        filename
       );
       // Write the buffer to the filessystem
       await writeFile(workImagePath, buffer);
 
       // Store the file path in an array
-      workPhotoPaths.push(`/uploads/${photo.name}`);
+      workPhotoPaths.push(`/uploads/${filename}`);
     }
 
     /* Create a new Work */

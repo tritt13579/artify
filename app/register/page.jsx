@@ -6,6 +6,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { signIn } from "next-auth/react";
+import Image from "next/image";
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -63,7 +64,9 @@ const Register = () => {
 
   return (
     <div className="register">
-      <img
+      <Image
+        width={300}
+        height={550}
         src="/assets/register.jpg"
         alt="register"
         className="register_decor"
@@ -128,11 +131,7 @@ const Register = () => {
             Register
           </button>
         </form>
-        <button
-          type="button"
-          onClick={loginWithGoogle}
-          className="google"
-        >
+        <button type="button" onClick={loginWithGoogle} className="google">
           <p>Log In with Google</p>
           <FcGoogle />
         </button>

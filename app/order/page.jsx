@@ -1,14 +1,14 @@
-"use client"
+"use client";
 
-import Loader from "@components/Loader"
-import Navbar from "@components/Navbar"
-import "@styles/Order.scss"
-import { useSession } from "next-auth/react"
+import Loader from "@components/Loader";
+import Navbar from "@components/Navbar";
+import "@styles/Order.scss";
+import { useSession } from "next-auth/react";
 
 const Order = () => {
-  const { data: session } = useSession()
+  const { data: session } = useSession();
 
-  const orders = session?.user?.orders
+  const orders = session?.user?.orders;
 
   return (
     <>
@@ -27,7 +27,7 @@ const Order = () => {
                 {order.orderItems.map((item, index) => (
                   <div className="product" key={index}>
                     <div className="product-info">
-                      <img src={item.image} alt={item.title}/>
+                      <img src={item.image} alt={item.title} />
                       <div className="orderItemInfo">
                         <h4>{item.title}</h4>
                         <p>Product ID: {item.productId}</p>
@@ -46,7 +46,7 @@ const Order = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Order
+export default Order;

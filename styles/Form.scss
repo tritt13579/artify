@@ -47,9 +47,9 @@
         font-weight: 600;
         font-size: 17px;
         cursor: pointer;
-    
+
         &:hover {
-          color: $pinkred
+          color: $pinkred;
         }
       }
 
@@ -73,6 +73,7 @@
         img {
           width: 100%;
           height: 100%;
+          object-fit: cover;
         }
 
         button {
@@ -86,7 +87,7 @@
           cursor: pointer;
 
           &:hover {
-            color: $pinkred
+            color: $pinkred;
           }
         }
       }
@@ -159,15 +160,15 @@
         width: 600px;
 
         @include ml {
-          width: 450px
+          width: 450px;
         }
 
         @include md {
-          width: 350px
+          width: 350px;
         }
 
         @include sm {
-          width: 280px
+          width: 280px;
         }
 
         &:focus {

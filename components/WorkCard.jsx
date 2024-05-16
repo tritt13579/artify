@@ -11,7 +11,6 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 const WorkCard = ({ work }) => {
-  // console.log(work);
   /* SLIDER FOR PHOTOS */
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -50,7 +49,6 @@ const WorkCard = ({ work }) => {
   const { data: session, update } = useSession();
   const userId = session?.user?._id;
 
-
   /* ADD TO WISHLIST */
   const wishlist = session?.user?.wishlist;
 
@@ -61,9 +59,6 @@ const WorkCard = ({ work }) => {
       router.push("/login");
       return;
     }
-
-  // console.log(userId, work._id)
-
 
     const response = await fetch(`api/user/${userId}/wishlist/${work._id}`, {
       method: "PATCH",

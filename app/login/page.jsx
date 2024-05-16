@@ -2,6 +2,7 @@
 
 import "@styles/Login.scss";
 import { signIn } from "next-auth/react";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
@@ -10,7 +11,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const router = useRouter()
+  const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -18,14 +19,14 @@ const Login = () => {
     try {
       const response = await signIn("credentials", {
         redirect: false,
-        email:email,
-        password:password,
+        email: email,
+        password: password,
       });
-      if(response.ok){
+      if (response.ok) {
         router.push("/");
       }
-      if(response.error){
-        setError("Invalid email or password. Please try again.")
+      if (response.error) {
+        setError("Invalid email or password. Please try again.");
       }
     } catch (err) {
       console.log(err);
@@ -38,7 +39,13 @@ const Login = () => {
 
   return (
     <div className="login">
-      <img src="/assets/login.jpg" alt="login" className="login_decor" />
+      <Image
+        width={300}
+        height={450}
+        src="/assets/login.jpg"
+        alt="login"
+        className="login_decor"
+      />
       <div className="login_content">
         <form className="login_content_form" onSubmit={handleSubmit}>
           <input

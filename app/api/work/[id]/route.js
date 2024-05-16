@@ -1,6 +1,7 @@
 import Work from "@models/Work";
 import { connectToDB } from "@mongodb/database";
 import path from "path";
+import { writeFile } from "fs/promises";
 
 export const GET = async (req, { params }) => {
   try {
@@ -43,18 +44,21 @@ export const PATCH = async (req, { params }) => {
         // Convert it to a Buffer
         const buffer = Buffer.from(bytes);
 
+        // Generate a unique filename by appending a timestamp
+        const filename = `${Date.now()}-${photo.name}`;
+
         // Define the destination path for the uploaded file
         const workImagePath = path.resolve(
           process.cwd(),
           "public/uploads",
-          photo.name
+          filename
         );
 
         // Write the buffer to the filessystem
         await writeFile(workImagePath, buffer);
 
         // Store the file path in an array
-        workPhotoPaths.push(`/uploads/${photo.name}`);
+        workPhotoPaths.push(`/uploads/${filename}`);
       } else {
         // If it's an old photo
         workPhotoPaths.push(photo);
