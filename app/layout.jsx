@@ -3,6 +3,14 @@ import Provider from "@components/Provider";
 export const metadata = {
   title: "HandiMart",
   description: "Where Handcrafted Dreams Come True",
+  icons: {
+    icon: [
+      {
+        rel: "icon",
+        url: "/favicon.ico",
+      },
+    ],
+  },
 };
 const layout = ({ children }) => {
   return (
