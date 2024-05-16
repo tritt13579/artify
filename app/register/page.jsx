@@ -67,7 +67,7 @@ const Register = () => {
       <Image
         width={300}
         height={550}
-        src="/assets/register.jpg"
+        src="/assets/regis.jpg"
         alt="register"
         className="register_decor"
       />
